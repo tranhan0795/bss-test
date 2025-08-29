@@ -8,7 +8,7 @@ const getNumberOfWord = async(text:string)=>{
  let res = 0;
  
  for (let i =1; i<=100;i++){
-    res+= (await processFile(`${filePath}/F${i}`,text));
+    res+= (await processFile(`${filePath}/F${i}.txt`,text));
  }
 
  return res;
