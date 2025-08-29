@@ -19,14 +19,14 @@ const search = (input: string)=>{
     setSeatchInput(e.target.value);
   }
 
-  const onSearch =()=>{
-     useDebouncedCallback(
-    (value) => {
-      search(value);
-    },
-    5000
-  );
-  }
+  const debouncedSearch = useDebouncedCallback((input: string) => {
+    search(input);
+  }, 5000);
+
+
+  const onSearch = () => {
+    debouncedSearch(searchInput);
+  };
 
   return <div>
    <p>Result: {wordNumber}</p>
